@@ -3,11 +3,22 @@
 
 int main()
 {
-    int X[6] = {19, 3, 27, 4, 5, 26};
-    int P[6] = {0,0,0,0,0,0};
-    int M[7] = {0,0,0,0,0,0,0};
+    int sizeN = 0;
+    printf("Enter the size of the array: \n");
+    scanf("%d",&sizeN);
+  
+    int X[100];
+    int P[100] = {0};
+    int M[100] = {0};
     int L = 0;
     int lo,hi,newL,mid,k;
+
+  printf("Enter the integers: \n");
+    for(int lol = 0; lol<sizeN;lol++){
+        printf("Enter number %d: \n",lol+1);
+        scanf("%d",&X[lol]);
+    }
+
 
     for(int i = 0; i<6;i++){
         lo = 1;
@@ -25,7 +36,6 @@ int main()
         newL = lo;
         P[i] = M[newL-1];
         M[newL] = i;
-        // printf("M= %d \n",M[i]);
         if(newL > L){
             L = newL;
         }
@@ -33,18 +43,18 @@ int main()
     int S[6] = {0,0,0,0,0,0};
     int S_rev[6] = {0,0,0,0,0,0};
     k = M[L];
-    // printf("Hello!!");
+
     for(int j = L-1; j>-1;j--){
-        // printf("L = %d\n",L);
         S[j]=X[k];
-        k = P[k];
-        // printf("%d \n",S[j]);
-    }
-    // int sizeArr = 0;
-    // sizeArr =  sizeof(S)/sizeof(S[0]);
+        k = P[k];    
+        
+        }
+
+    printf("\nX = ");
     for(int z = 0;z<L;z++){
-        printf("X = %d\n", S[z]);
+        printf(" %d ", S[z]);
     }
+    printf("\n");
 
     return 0;
 }
