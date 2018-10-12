@@ -1,26 +1,23 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
-int main()
+int main(int argc, char *argv[])
 {
-    int sizeN = 0;
-    printf("Enter the size of the array: \n");
-    scanf("%d",&sizeN);
-  
-    int X[100];
-    int P[100] = {0};
+  //Initialsing my arrays
+    int X[100]; //Holds the int values of the CLI
+    int P[100] = {0}; 
     int M[101] = {0};
     int L = 0;
     int lo,hi,newL,mid,k;
 
-  printf("Enter the integers: \n");
-    for(int lol = 0; lol<sizeN;lol++){
-        printf("Enter number %d: \n",lol+1);
-        scanf("%d",&X[lol]);
-    }
-
-
-    for(int i = 0; i<6;i++){
+//This loop in incharge of converting the CLI to int
+for(int f = 1; f<argc; f++){ 
+    X[f] = atoi(argv[f]);
+    // printf("The number entered: %d \n",X[f]);
+}
+//The Binary search happens here
+    for(int i = 1; i<argc;i++){
         lo = 1;
         hi = L;
         while(lo<=hi){
@@ -49,8 +46,8 @@ int main()
         k = P[k];    
         
         }
-
-    printf("\nX = ");
+//Prints out the numbers
+    printf("X = ");
     for(int z = 0;z<L;z++){
         printf(" %d ", S[z]);
     }
