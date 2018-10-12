@@ -9,7 +9,7 @@ int main()
   
     int X[100];
     int P[100] = {0};
-    int M[100] = {0};
+    int M[101] = {0};
     int L = 0;
     int lo,hi,newL,mid,k;
 
@@ -40,8 +40,8 @@ int main()
             L = newL;
         }
     }
-    int S[6] = {0,0,0,0,0,0};
-    int S_rev[6] = {0,0,0,0,0,0};
+    int S[100] = {0};
+    int S_rev[100] = {0};
     k = M[L];
 
     for(int j = L-1; j>-1;j--){
