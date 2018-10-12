@@ -5,9 +5,16 @@
 int main(int argc, char *argv[])
 {
   //Initialsing my arrays
-    int X[100]; //Holds the int values of the CLI
-    int P[100] = {0}; 
-    int M[101] = {0};
+    int ffff[argc];
+    int X[argc]; //Holds the int values of the CLI
+    int P[argc];
+    for (int i = 0; i<argc;i++){
+        P[i] = 0;
+    }
+    int M[argc+1];
+    for(int i = 0;i<=argc;i++){
+        M[i] = 0;
+    }
     int L = 0;
     int lo,hi,newL,mid,k;
 
